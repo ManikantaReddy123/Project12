@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from Project9.settings import EMAIL_HOST_USER
 from .forms import RegForm
-from .models import RegModels
+
 # Create your views here.
 class Home(View):
     def get(self,request):
@@ -28,13 +28,5 @@ class Reg(View):
         send_mail("otp for registration",otp,EMAIL_HOST_USER,[emailid],fail_silently=True)
         rf=RegForm(request.POST)
         if rf.is_valid():
-            rm=RegModels(FName=rf.cleaned_data["FirstName"],
-                         LName=rf.cleaned_data["LastName"],
-                         UserName=rf.cleaned_data["UserName"],
-                         Password=rf.cleaned_data["Password"],
-                         CPassword=rf.cleaned_data["ConfirmPassword"],
-                         Emailid=rf.cleaned_data["Emailid"],
-                         MobileNo=rf.cleaned_data["MobileNo"]
-                        )
-            rm.save()
+            rf.save()
             return HttpResponse("OTP SEND TO EMAIL AND MOBILENO")
