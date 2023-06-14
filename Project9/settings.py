@@ -17,8 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='manikantareddy213@gmail.com'
-EMAIL_HOST_PASSWORD ='hhlrbxrlpsrksrjv'
+EMAIL_HOST_USER ='mani**************'
+EMAIL_HOST_PASSWORD ='hh**********'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
